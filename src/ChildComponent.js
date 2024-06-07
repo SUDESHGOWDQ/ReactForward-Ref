@@ -19,4 +19,4 @@ const ChildComponent = forwardRef((props, ref) => {
   );
 });
 
-export default ChildComponent;
+export default forwardRef(ChildComponent);
