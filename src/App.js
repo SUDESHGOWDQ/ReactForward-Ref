@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react';
+import ChildComponent from './ChildComponent';
 
 function App() {
+  const childRef = useRef(null);
+
+  const handleClick = () => {
+  
+    childRef.current.focus();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Parent Component</h1>
+      <button onClick={handleClick}>Focus Child Input</button>
+      <ChildComponent ref={childRef} />
     </div>
   );
 }
